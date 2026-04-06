@@ -1,0 +1,16 @@
+{
+  "name": "pensieve-cards",
+  "version": "1.0.0",
+  "description": "SPA flashcard learning app with Node, Express and MongoDB",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "mongoose": "^8.23.0"
+  }
+}

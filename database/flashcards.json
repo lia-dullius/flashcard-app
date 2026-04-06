@@ -1,0 +1,27 @@
+[
+  {
+    "category": "Charms",
+    "question": "Which spell is used to disarm an opponent?",
+    "answer": "Expelliarmus"
+  },
+  {
+    "category": "Potions",
+    "question": "What is the effect of Felix Felicis?",
+    "answer": "It gives the drinker good luck for a period of time"
+  },
+  {
+    "category": "History",
+    "question": "Who founded Hogwarts?",
+    "answer": "Godric Gryffindor, Helga Hufflepuff, Rowena Ravenclaw and Salazar Slytherin"
+  },
+  {
+    "category": "Transfiguration",
+    "question": "What is transfiguration?",
+    "answer": "The magical art of changing the form or appearance of an object"
+  },
+  {
+    "category": "Herbology",
+    "question": "What is a Mandrake known for?",
+    "answer": "Its scream can be fatal to those who hear it"
+  }
+]
