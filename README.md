@@ -132,6 +132,6 @@ This file represents the structure of stored flashcards and can be used as refer
 
 One of the main challenges in this project was building a dynamic single-page interface without using a frontend framework. The application needed to manage different interface states, including searching, filtering, editing cards, and running study sessions, while keeping the experience smooth and coherent.
 
-Another challenge was interpreting the requirement that a flashcard should “disappear after use” in a way that made sense for the product. The final solution removes cards from the current study session rather than deleting them from the database, which keeps the study flow clear without compromising the library.
+Another challenge was interpreting the requirement that a flashcard should “disappear after use” in a way that made sense for the product. The final solution removes cards from the current study session rather than deleting them from the database. This ensures that users can revisit the same content in future sessions, reflecting the behaviour of physical flashcards, which are set aside after use instead of being discarded.
 
 I also encountered and resolved a bug caused by removing an HTML element that was still being referenced in JavaScript. Fixing this required aligning the DOM structure with the application logic, reinforcing the importance of consistency between markup and script.
