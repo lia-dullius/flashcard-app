@@ -3,7 +3,7 @@ console.log("JavaScript connected");
 document.addEventListener("DOMContentLoaded", () => {
   /*
     =========================================
-    ELEMENTOS DO DOM
+    DOM ELEMENTS
     =========================================
   */
   const cardsContainer = document.getElementById("cards-container");
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    BOTÃO DE CANCELAR EDIÇÃO
+    CANCEL EDITION BUTTON
     =========================================
   */
   const cancelEditButton = document.createElement("button");
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    TOAST DE FEEDBACK
+    FEEDBACK TOAST
     =========================================
   */
   const toast = document.createElement("div");
@@ -48,21 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    CONFIG API
+    API SETTING
     =========================================
   */
   const API_BASE_URL = "http://localhost:3000/api/flashcards";
 
   /*
     =========================================
-    DADOS INICIAIS
+    INITIAL DATA
     =========================================
   */
   let flashcards = [];
 
   /*
     =========================================
-    ESTADO
+    STATE
     =========================================
   */
   const state = {
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    TEMAS DAS CATEGORIAS
+    CATEGORY THEMES
     =========================================
   */
   const categoryThemes = {
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    ALIASES DE CATEGORIA
+    CATEGORY ALIASES
     =========================================
   */
   const categoryAliases = {
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    FUNÇÕES AUXILIARES
+    FUCNTIONS
     =========================================
   */
   function escapeHtml(text) {
@@ -454,7 +454,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    RENDER DAS TAGS DA LIBRARY
+    TAGS RENDER IN LIBRARY
     =========================================
   */
   function renderLibraryTags() {
@@ -493,7 +493,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    RENDER DAS TAGS DO STUDY ROOM
+    TAGS RENDER IN STUDY ROOM
     =========================================
   */
   function renderStudyTags() {
@@ -535,7 +535,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    RENDER DA LIBRARY
+    LIBRARY RENDER
     =========================================
   */
   function renderLibrary() {
@@ -616,7 +616,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    RENDER DO STUDY ROOM
+    RENDER IN STUDY ROOM
     =========================================
   */
   function renderStudyRoom() {
@@ -763,7 +763,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    EVENTOS DAS TAGS DA LIBRARY
+    LIVRARY TAGS - EVENTSY
     =========================================
   */
   libraryTags.addEventListener("click", (event) => {
@@ -777,7 +777,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    EVENTOS DAS TAGS DO STUDY ROOM
+    STUDY ROOM TAGS - EVENTS
     =========================================
   */
   studyTags.addEventListener("click", (event) => {
@@ -882,7 +882,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    FECHAR MENU CLICANDO FORA
+    CLOSE MENU CLICKING OUTSIDE
     =========================================
   */
   document.addEventListener("click", (event) => {
@@ -962,7 +962,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    CANCELAR EDIÇÃO
+    CANCEL EDITTING
     =========================================
   */
   cancelEditButton.addEventListener("click", () => {
@@ -1007,7 +1007,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    REVEAL ANSWER NO STUDY ROOM
+    REVEAL ANSWER ON STUDY ROOM
     =========================================
   */
   studyContent.addEventListener("click", (event) => {
@@ -1020,7 +1020,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
     =========================================
-    RENDER INICIAL
+    INITIAL RENDER
     =========================================
   */
   resetFormToAddMode();
