@@ -15,6 +15,8 @@ This website helps users organise and review study content in a quick and engagi
 - **Database:** MongoDB Atlas with Mongoose
 - **Architecture:** Single-page application with dynamic DOM rendering
 - **Styling:** Custom CSS with responsive layout and category-based visual themes
+- **Routing:** Express API routes for CRUD operations
+- **Deployment:** Not deployed (runs locally)
 
 ## Features
 
