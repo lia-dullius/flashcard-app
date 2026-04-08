@@ -2,6 +2,8 @@
 
 Pensieve Cards is a single-page flashcard learning app inspired by the wizarding world of Hogwarts, from Harry Potter. It allows users to create, search, edit, delete, and study flashcards stored in a MongoDB database.
 
+[▶️ Watch demo video](images/Demo.mp4)
+
 ## Problem this project solves
 
 This website helps users organise and review study content in a quick and engaging way. Instead of relying on static notes, users can create short question-and-answer cards, group them by category, and review them through a focused study session in Study Room, or directly in the Cards Library.
