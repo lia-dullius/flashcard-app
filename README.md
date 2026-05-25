@@ -78,7 +78,7 @@ npm install
 
 ### 2. Create a `.env` file
 
-Create a `.env` file in the project root and add your MongoDB connection string:
+Create a `.env` file in the project root and add your own MongoDB connection string:
 
 ```env
 MONGODB_URI=your_mongodb_connection_string
