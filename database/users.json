@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "6a1425d19d4a2ed76e648e2f",
+    "name": "Lia",
+    "email": "lia@test.com",
+    "password": "[hashed password hidden - starts with $2b$10$]",
+    "role": "admin",
+    "createdAt": "2026-05-25T10:34:57.104Z",
+    "updatedAt": "2026-05-25T10:34:57.104Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a142c299d4a2ed76e648e3a",
+    "name": "Test User",
+    "email": "test@test.com",
+    "password": "[hashed password hidden - starts with $2b$10$]",
+    "role": "user",
+    "createdAt": "2026-05-25T11:02:01.594Z",
+    "updatedAt": "2026-05-25T11:02:01.594Z",
+    "__v": 0
+  }
+]

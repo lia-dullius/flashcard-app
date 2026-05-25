@@ -1,27 +1,478 @@
 [
   {
-    "category": "Charms",
+    "_id": "69d5b3ca1c4ce599f95d35f3",
+    "category": "charms",
     "question": "Which spell is used to disarm an opponent?",
-    "answer": "Expelliarmus"
+    "answer": "Expelliarmus",
+    "createdAt": "2026-04-08T01:47:54.529Z",
+    "updatedAt": "2026-04-08T01:47:54.529Z",
+    "__v": 0
   },
   {
-    "category": "Potions",
-    "question": "What is the effect of Felix Felicis?",
-    "answer": "It gives the drinker good luck for a period of time"
+    "_id": "69d5b4151c4ce599f95d35f6",
+    "category": "charms",
+    "question": "Which spell produces light from a wand tip?",
+    "answer": "Lumos",
+    "createdAt": "2026-04-08T01:49:09.043Z",
+    "updatedAt": "2026-04-08T01:49:09.043Z",
+    "__v": 0
   },
   {
-    "category": "History",
-    "question": "Who founded Hogwarts?",
-    "answer": "Godric Gryffindor, Helga Hufflepuff, Rowena Ravenclaw and Salazar Slytherin"
+    "_id": "69d5b4341c4ce599f95d35f9",
+    "category": "charms",
+    "question": "What spell unlocks doors?",
+    "answer": "Lumos",
+    "createdAt": "2026-04-08T01:49:40.790Z",
+    "updatedAt": "2026-04-08T01:49:54.745Z",
+    "__v": 0
   },
   {
-    "category": "Transfiguration",
+    "_id": "69d5b45e1c4ce599f95d35fe",
+    "category": "potions",
+    "question": "What is the main use of Polyjuice Potion?",
+    "answer": "To transform into another person",
+    "createdAt": "2026-04-08T01:50:22.032Z",
+    "updatedAt": "2026-04-08T01:50:22.032Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5b4711c4ce599f95d3601",
+    "category": "potions",
+    "question": "Which ingredient is added last to Polyjuice Potion?",
+    "answer": "A hair from the person to be imitated",
+    "createdAt": "2026-04-08T01:50:41.411Z",
+    "updatedAt": "2026-04-08T01:50:41.411Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5b4831c4ce599f95d3604",
+    "category": "potions",
+    "question": "What potion is known as the \"liquid luck\"?",
+    "answer": "Felix Felicis",
+    "createdAt": "2026-04-08T01:50:59.704Z",
+    "updatedAt": "2026-04-08T01:50:59.704Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5b4a41c4ce599f95d3607",
+    "category": "history",
+    "question": "When did the Second Wizarding War end?",
+    "answer": "2 May 1998",
+    "createdAt": "2026-04-08T01:51:32.898Z",
+    "updatedAt": "2026-04-08T01:51:32.898Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5b4b81c4ce599f95d360a",
+    "category": "history",
+    "question": "Who was the first Minister for Magic?",
+    "answer": "Ulick Gamp",
+    "createdAt": "2026-04-08T01:51:52.316Z",
+    "updatedAt": "2026-04-08T01:51:52.316Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5b4c51c4ce599f95d360d",
+    "category": "history",
+    "question": "What event led to Voldemort’s first downfall?",
+    "answer": "His attempt to kill Harry Potter as a baby",
+    "createdAt": "2026-04-08T01:52:05.789Z",
+    "updatedAt": "2026-04-08T01:52:05.789Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c6941c4ce599f95d3610",
+    "category": "transfiguration",
     "question": "What is transfiguration?",
-    "answer": "The magical art of changing the form or appearance of an object"
+    "answer": "What is transfiguration?",
+    "createdAt": "2026-04-08T03:08:04.177Z",
+    "updatedAt": "2026-04-08T03:08:04.177Z",
+    "__v": 0
   },
   {
-    "category": "Herbology",
+    "_id": "69d5c6a11c4ce599f95d3613",
+    "category": "transfiguration",
+    "question": "Transfiguration",
+    "answer": "What does the spell \"Vera Verto\" do?",
+    "createdAt": "2026-04-08T03:08:17.640Z",
+    "updatedAt": "2026-04-08T03:08:17.640Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c6b11c4ce599f95d3616",
+    "category": "transfiguration",
+    "question": "Who teaches Transfiguration at Hogwarts?",
+    "answer": "Who teaches Transfiguration at Hogwarts?",
+    "createdAt": "2026-04-08T03:08:33.810Z",
+    "updatedAt": "2026-04-08T03:08:33.810Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c6c91c4ce599f95d3619",
+    "category": "herbology",
     "question": "What is a Mandrake known for?",
-    "answer": "Its scream can be fatal to those who hear it"
+    "answer": "Its cry can be fatal",
+    "createdAt": "2026-04-08T03:08:57.099Z",
+    "updatedAt": "2026-04-08T03:08:57.099Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c6de1c4ce599f95d361c",
+    "category": "herbology",
+    "question": "What plant can restore people who have been petrified?",
+    "answer": "Mandrake",
+    "createdAt": "2026-04-08T03:09:18.728Z",
+    "updatedAt": "2026-04-08T03:09:18.728Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c7071c4ce599f95d361f",
+    "category": "herbology",
+    "question": "Where are dangerous plants studied at Hogwarts?",
+    "answer": "In the greenhouses",
+    "createdAt": "2026-04-08T03:09:59.107Z",
+    "updatedAt": "2026-04-08T03:09:59.107Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c7281c4ce599f95d3622",
+    "category": "defense against the dark arts",
+    "question": "What spell repels Dementors?",
+    "answer": "Expecto Patronum",
+    "createdAt": "2026-04-08T03:10:32.807Z",
+    "updatedAt": "2026-04-08T03:12:03.984Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c73b1c4ce599f95d3625",
+    "category": "defense against the dark arts",
+    "question": "What is a Boggart’s ability?",
+    "answer": "It turns into a person’s greatest fear",
+    "createdAt": "2026-04-08T03:10:51.787Z",
+    "updatedAt": "2026-04-08T03:10:51.787Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c74a1c4ce599f95d3628",
+    "category": "defense against the dark arts",
+    "question": "What spell defeats a Boggart?",
+    "answer": "Riddikulus",
+    "createdAt": "2026-04-08T03:11:06.306Z",
+    "updatedAt": "2026-04-08T03:11:22.672Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c7a31c4ce599f95d3631",
+    "category": "astronomy",
+    "question": "What do students study in Astronomy?",
+    "answer": "Stars, planets and celestial bodies",
+    "createdAt": "2026-04-08T03:12:35.059Z",
+    "updatedAt": "2026-04-08T03:12:35.059Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c7b41c4ce599f95d3634",
+    "category": "astronomy",
+    "question": "When are Astronomy classes usually held?",
+    "answer": "At night",
+    "createdAt": "2026-04-08T03:12:52.563Z",
+    "updatedAt": "2026-04-08T03:12:52.563Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c7c21c4ce599f95d3637",
+    "category": "astronomy",
+    "question": "What tool is commonly used in Astronomy?",
+    "answer": "Telescope",
+    "createdAt": "2026-04-08T03:13:06.254Z",
+    "updatedAt": "2026-04-08T03:13:06.254Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c7ea1c4ce599f95d363a",
+    "category": "divination",
+    "question": "What is Divination?",
+    "answer": "The practice of predicting the future",
+    "createdAt": "2026-04-08T03:13:46.520Z",
+    "updatedAt": "2026-04-08T03:13:46.520Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c7fa1c4ce599f95d363d",
+    "category": "divination",
+    "question": "What is a common method used in Divination classes?",
+    "answer": "Reading tea leaves",
+    "createdAt": "2026-04-08T03:14:02.419Z",
+    "updatedAt": "2026-04-08T03:14:02.419Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c8071c4ce599f95d3640",
+    "category": "divination",
+    "question": "Who teaches Divination at Hogwarts?",
+    "answer": "Professor Trelawney",
+    "createdAt": "2026-04-08T03:14:15.963Z",
+    "updatedAt": "2026-04-08T03:14:15.963Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c8221c4ce599f95d3643",
+    "category": "arithmancy",
+    "question": "What does Arithmancy study?",
+    "answer": "The magical properties of numbers",
+    "createdAt": "2026-04-08T03:14:42.105Z",
+    "updatedAt": "2026-04-08T03:14:42.105Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c8321c4ce599f95d3646",
+    "category": "arithmancy",
+    "question": "What is often used to predict outcomes in Arithmancy?",
+    "answer": "Numerical patterns",
+    "createdAt": "2026-04-08T03:14:58.725Z",
+    "updatedAt": "2026-04-08T03:14:58.725Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c8501c4ce599f95d3649",
+    "category": "arithmancy",
+    "question": "Is Arithmancy a compulsory subject at Hogwarts?",
+    "answer": "No, it is optional",
+    "createdAt": "2026-04-08T03:15:28.382Z",
+    "updatedAt": "2026-04-08T03:15:28.382Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c87d1c4ce599f95d364c",
+    "category": "runes",
+    "question": "What are Ancient Runes used for?",
+    "answer": "Studying magical symbols and languages",
+    "createdAt": "2026-04-08T03:16:13.002Z",
+    "updatedAt": "2026-04-08T03:16:13.002Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c88a1c4ce599f95d364f",
+    "category": "runes",
+    "question": "What type of knowledge is required to study runes?",
+    "answer": "Understanding of ancient languages",
+    "createdAt": "2026-04-08T03:16:26.124Z",
+    "updatedAt": "2026-04-08T03:16:26.124Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c9ca1c4ce599f95d3652",
+    "category": "runes",
+    "question": "Are runes used in spellcasting?",
+    "answer": "Sometimes, for advanced magic",
+    "createdAt": "2026-04-08T03:21:46.382Z",
+    "updatedAt": "2026-04-08T03:21:46.382Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5c9e21c4ce599f95d3655",
+    "category": "care of magical creatures",
+    "question": "What is a Hippogriff known for?",
+    "answer": "What is a Hippogriff known for?",
+    "createdAt": "2026-04-08T03:22:10.725Z",
+    "updatedAt": "2026-04-08T03:22:10.725Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d5ca011c4ce599f95d3658",
+    "category": "care of magical creatures",
+    "question": "What must you do before approaching a Hippogriff?",
+    "answer": "Bow",
+    "createdAt": "2026-04-08T03:22:41.458Z",
+    "updatedAt": "2026-04-08T03:22:41.458Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a142c0d9d4a2ed76e648e36",
+    "category": "qweqwe",
+    "question": "qweqweqw",
+    "answer": "qweqweqe",
+    "createdAt": "2026-05-25T11:01:33.668Z",
+    "updatedAt": "2026-05-25T11:01:33.668Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a142c3d9d4a2ed76e648e3d",
+    "category": "isaduhauisdhas",
+    "question": "akjsandkajsda",
+    "answer": "askjdnakjsdn",
+    "createdAt": "2026-05-25T11:02:21.253Z",
+    "updatedAt": "2026-05-25T11:02:21.253Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a142ead4ec7b8c4663a8c52",
+    "user": "6a1425d19d4a2ed76e648e2f",
+    "category": "care of magical creatures",
+    "question": "What must you do before approaching a Hippogriff?",
+    "answer": "Bow",
+    "createdAt": "2026-05-25T11:12:45.810Z",
+    "updatedAt": "2026-05-25T11:12:45.810Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a142edd4ec7b8c4663a8c58",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "runes",
+    "question": "Are runes used in spellcasting?",
+    "answer": "Sometimes, for advanced magic",
+    "createdAt": "2026-05-25T11:13:33.684Z",
+    "updatedAt": "2026-05-25T11:13:45.652Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1430854ec7b8c4663a8c75",
+    "user": "6a1425d19d4a2ed76e648e2f",
+    "category": "care of magical creatures",
+    "question": "What is a Hippogriff known for?",
+    "answer": "What is a Hippogriff known for?",
+    "createdAt": "2026-05-25T11:20:37.891Z",
+    "updatedAt": "2026-05-25T11:20:37.891Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1430a24ec7b8c4663a8c7d",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "runes",
+    "question": "What type of knowledge is required to study runes?",
+    "answer": "Understanding of ancient languages",
+    "createdAt": "2026-05-25T11:21:06.029Z",
+    "updatedAt": "2026-05-25T11:21:06.029Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144bb4d9152b629687869f",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "arithmancy",
+    "question": "Is Arithmancy a compulsory subject at Hogwarts?",
+    "answer": "No, it is optional",
+    "createdAt": "2026-05-25T13:16:36.917Z",
+    "updatedAt": "2026-05-25T13:16:36.917Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144bead9152b62968786a4",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "arithmancy",
+    "question": "What is often used to predict outcomes in Arithmancy?",
+    "answer": "Numerical patterns",
+    "createdAt": "2026-05-25T13:17:30.275Z",
+    "updatedAt": "2026-05-25T13:17:30.275Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144c0bd9152b62968786a9",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "divination",
+    "question": "Who teaches Divination at Hogwarts?",
+    "answer": "Professor Trelawney",
+    "createdAt": "2026-05-25T13:18:03.562Z",
+    "updatedAt": "2026-05-25T13:18:03.562Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144c1ad9152b62968786ae",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "divination",
+    "question": "What is a common method used in Divination classes?",
+    "answer": "Reading tea leaves",
+    "createdAt": "2026-05-25T13:18:18.302Z",
+    "updatedAt": "2026-05-25T13:18:18.302Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144c2cd9152b62968786b3",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "astronomy",
+    "question": "What tool is commonly used in Astronomy?",
+    "answer": "Telescope",
+    "createdAt": "2026-05-25T13:18:36.326Z",
+    "updatedAt": "2026-05-25T13:18:36.326Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144c3bd9152b62968786b8",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "astronomy",
+    "question": "When are Astronomy classes usually held?",
+    "answer": "At night",
+    "createdAt": "2026-05-25T13:18:51.517Z",
+    "updatedAt": "2026-05-25T13:18:51.517Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144c92d9152b62968786bd",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "defense against the dark arts",
+    "question": "What spell defeats a Boggart?",
+    "answer": "Riddikulus",
+    "createdAt": "2026-05-25T13:20:18.110Z",
+    "updatedAt": "2026-05-25T13:20:18.110Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144c9fd9152b62968786c2",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "defense against the dark arts",
+    "question": "What is a Boggart’s ability?",
+    "answer": "It turns into a person’s greatest fear",
+    "createdAt": "2026-05-25T13:20:31.753Z",
+    "updatedAt": "2026-05-25T13:20:31.753Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144ccbd9152b62968786c7",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "herbology",
+    "question": "What is a Mandrake known for?",
+    "answer": "Its cry can be fatal",
+    "createdAt": "2026-05-25T13:21:15.867Z",
+    "updatedAt": "2026-05-25T13:21:45.307Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144cffd9152b62968786d1",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "history",
+    "question": "When did the Second Wizarding War end?",
+    "answer": "2 May 1998",
+    "createdAt": "2026-05-25T13:22:07.225Z",
+    "updatedAt": "2026-05-25T13:22:07.225Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144d0fd9152b62968786d6",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "history",
+    "question": "Who was the first Minister for Magic?",
+    "answer": "Ulick Gamp",
+    "createdAt": "2026-05-25T13:22:23.079Z",
+    "updatedAt": "2026-05-25T13:22:23.079Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144d26d9152b62968786db",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "potions",
+    "question": "What is the main use of Polyjuice Potion?",
+    "answer": "To transform into another person",
+    "createdAt": "2026-05-25T13:22:46.813Z",
+    "updatedAt": "2026-05-25T13:22:46.813Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a144d4cd9152b62968786e0",
+    "user": "6a142c299d4a2ed76e648e3a",
+    "category": "potions",
+    "question": "What potion is known as the \"liquid luck\"?",
+    "answer": "Felix Felicis",
+    "createdAt": "2026-05-25T13:23:24.760Z",
+    "updatedAt": "2026-05-25T13:23:24.760Z",
+    "__v": 0
   }
 ]
