@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "./services/api";
+import AuthForm from "./components/AuthForm.jsx";
 import "./style.css";
 
 const categoryThemes = {
@@ -123,7 +124,14 @@ function getCategoryTheme(category) {
 }
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(() => {
+    const savedUser = localStorage.getItem("pensieveUser");
+    return savedUser ? JSON.parse(savedUser) : null;
+  }); 
+
   const [flashcards, setFlashcards] = useState([]);
+  const [studyHistory, setStudyHistory] = useState([]);
+  const [adminOverview, setAdminOverview] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLibraryCategory, setSelectedLibraryCategory] = useState("all");
   const [selectedStudyCategory, setSelectedStudyCategory] = useState("all");
@@ -138,7 +146,8 @@ function App() {
   cards: [],
   totalCards: 0,
   completedCount: 0,
-  revealedCurrent: false
+  revealedCurrent: false,
+  startedAt: null
 });
 
   const [formData, setFormData] = useState({
@@ -147,19 +156,66 @@ function App() {
     answer: ""
   });
 
-  async function loadFlashcards() {
-    try {
-      const response = await api.get("/flashcards");
-      setFlashcards(response.data);
-    } catch (error) {
-      console.error("Error loading flashcards:", error);
-      showToast("Could not load flashcards from the database.");
-    }
+async function loadFlashcards() {
+  try {
+    const response = await api.get("/flashcards");
+    setFlashcards(response.data);
+  } catch (error) {
+    console.error("Error loading flashcards:", error);
+    showToast("Could not load flashcards from the database.");
   }
+}
 
+async function loadStudyHistory() {
+  try {
+    const response = await api.get("/study-history");
+    setStudyHistory(response.data);
+  } catch (error) {
+    console.error("Error loading study history:", error);
+    showToast("Could not load study history.");
+  }
+}
+async function loadAdminOverview() {
+  try {
+    const response = await api.get("/admin/overview");
+    setAdminOverview(response.data);
+  } catch (error) {
+    console.error("Error loading admin overview:", error);
+    showToast("Could not load admin dashboard.");
+  }
+}
+async function saveStudyHistory(status, completedCards) {
+  try {
+    await api.post("/study-history", {
+      category: selectedStudyCategory,
+      totalCards: studySession.totalCards,
+      completedCards,
+      status,
+      startedAt: studySession.startedAt
+    });
+
+    await loadStudyHistory();
+  } catch (error) {
+    console.error("Error saving study history:", error);
+    showToast("Could not save this study session to history.");
+  }
+}
   useEffect(() => {
-    loadFlashcards();
-  }, []);
+    if (currentUser) {
+      loadFlashcards();
+      loadStudyHistory();
+
+      if (currentUser.role === "admin") {
+        loadAdminOverview();
+      } else {
+        setAdminOverview(null);
+      }
+    } else {
+      setFlashcards([]);
+      setStudyHistory([]);
+      setAdminOverview(null);
+    }
+  }, [currentUser]);
 
   function showToast(message) {
     setToast(message);
@@ -336,7 +392,57 @@ function getStudyPool() {
 function getCurrentStudyCard() {
   return studySession.cards[0] || null;
 }
+function formatDateTime(dateValue) {
+  if (!dateValue) {
+    return "Date not available";
+  }
 
+  return new Date(dateValue).toLocaleString("en-AU", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+}
+function formatDuration(startedAt, endedAt) {
+  if (!startedAt || !endedAt) {
+    return "Duration not available";
+  }
+
+  const start = new Date(startedAt);
+  const end = new Date(endedAt);
+  const durationInSeconds = Math.max(0, Math.round((end - start) / 1000));
+
+  const minutes = Math.floor(durationInSeconds / 60);
+  const seconds = durationInSeconds % 60;
+
+  if (minutes === 0) {
+    return `${seconds} sec`;
+  }
+
+  return `${minutes} min ${seconds} sec`;
+}
+
+function formatAverageTime(startedAt, endedAt, completedCards) {
+  if (!startedAt || !endedAt || completedCards === 0) {
+    return null;
+  }
+
+  const start = new Date(startedAt);
+  const end = new Date(endedAt);
+  const durationInSeconds = Math.max(0, Math.round((end - start) / 1000));
+  const averageSeconds = Math.round(durationInSeconds / completedCards);
+
+  if (averageSeconds < 60) {
+    return `${averageSeconds} sec/card`;
+  }
+
+  const minutes = Math.floor(averageSeconds / 60);
+  const seconds = averageSeconds % 60;
+
+  return `${minutes} min ${seconds} sec/card`;
+}
 function startStudySession() {
   const pool = getStudyPool();
 
@@ -346,23 +452,28 @@ function startStudySession() {
   }
 
   setStudySession({
-    isActive: true,
-    completed: false,
-    cards: shuffleArray(pool),
-    totalCards: pool.length,
-    completedCount: 0,
-    revealedCurrent: false
-  });
+  isActive: true,
+  completed: false,
+  cards: shuffleArray(pool),
+  totalCards: pool.length,
+  completedCount: 0,
+  revealedCurrent: false,
+  startedAt: new Date().toISOString()
+});
 
   showToast("Study session started.");
 }
 
-function endStudySession() {
+async function endStudySession() {
   const confirmed = window.confirm(
     "Are you sure you want to end this study session? Your cards will remain saved, but the current session progress will be cleared."
   );
 
   if (!confirmed) return;
+
+  if (studySession.completedCount > 0) {
+    await saveStudyHistory("ended", studySession.completedCount);
+  }
 
   setStudySession({
     isActive: false,
@@ -370,7 +481,8 @@ function endStudySession() {
     cards: [],
     totalCards: 0,
     completedCount: 0,
-    revealedCurrent: false
+    revealedCurrent: false,
+    startedAt: null
   });
 
   showToast("Study session ended.");
@@ -383,23 +495,26 @@ function revealStudyAnswer() {
   }));
 }
 
-function goToNextStudyCard() {
+async function goToNextStudyCard() {
   if (!studySession.isActive || !studySession.revealedCurrent) return;
 
   const remainingCards = studySession.cards.slice(1);
   const newCompletedCount = studySession.completedCount + 1;
 
   if (remainingCards.length === 0) {
+    await saveStudyHistory("completed", newCompletedCount);
+
     setStudySession({
       isActive: false,
       completed: true,
       cards: [],
       totalCards: studySession.totalCards,
       completedCount: newCompletedCount,
-      revealedCurrent: false
+      revealedCurrent: false,
+      startedAt: null
     });
 
-    showToast("Session complete.");
+    showToast("Session complete and saved to history.");
     return;
   }
 
@@ -411,11 +526,88 @@ function goToNextStudyCard() {
   });
 }
 
+function handleLogout() {
+  localStorage.removeItem("pensieveToken");
+  localStorage.removeItem("pensieveUser");
+  setCurrentUser(null);
+  setFlashcards([]);
+  showToast("Logged out successfully.");
+}
+
+if (!currentUser) {
+  return <AuthForm onAuthSuccess={setCurrentUser} />;
+}
+
 const currentStudyCard = getCurrentStudyCard();
 const availableStudyCards = getStudyPool();
 
   return (
     <main className="app" onClick={() => setOpenMenuId(null)}>
+      <div className="user-bar">
+        <p>
+          Logged in as <strong>{currentUser.name}</strong> ({currentUser.role})
+        </p>
+
+        <button type="button" className="secondary-btn logout-btn" onClick={handleLogout}>
+          Log out
+        </button>
+      </div>
+    {currentUser.role === "admin" && adminOverview && (
+      <section className="admin-dashboard">
+        <div className="admin-dashboard-header">
+          <div>
+            <p className="eyebrow">Admin only</p>
+            <h2>🛡️ Admin Dashboard</h2>
+            <p className="admin-copy">
+              Overview of users, flashcards and study activity across the app.
+            </p>
+          </div>
+        </div>
+
+        <div className="admin-summary-grid">
+          <article className="admin-summary-card">
+            <span>Total users</span>
+            <strong>{adminOverview.totalUsers}</strong>
+          </article>
+
+          <article className="admin-summary-card">
+            <span>Total flashcards</span>
+            <strong>{adminOverview.totalFlashcards}</strong>
+          </article>
+
+          <article className="admin-summary-card">
+            <span>Total study sessions</span>
+            <strong>{adminOverview.totalStudySessions}</strong>
+          </article>
+        </div>
+
+        <div className="admin-table-wrap">
+          <table className="admin-table">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Cards</th>
+                <th>Study sessions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {adminOverview.users.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.role === "admin" ? "🛡️ Admin" : "👤 User"}</td>
+                  <td>{user.totalFlashcards}</td>
+                  <td>{user.totalStudySessions}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )}
       <section className="top-layout">
         <header className="app-header">
           <div className="hero-copy">
@@ -645,6 +837,79 @@ const availableStudyCards = getStudyPool();
       </article>
     </div>
   </div>
+    <section className="learning-history study-history-panel">
+    <div className="learning-history-header">
+      <div>
+        <h2>📜 Learning history</h2>
+        <p className="library-copy">
+          Review your most recent study sessions.
+        </p>
+      </div>
+    </div>
+
+    {studyHistory.length === 0 ? (
+      <p className="history-empty">
+        No study sessions recorded yet. Complete a session to start building your history.
+      </p>
+    ) : (
+        // tabela aqui
+      <div className="history-table-wrap">
+        <table className="history-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Cards</th>
+              <th>Total duration</th>
+              <th>Avg. sec/card</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {studyHistory.map((session) => {
+              const theme =
+                session.category === "all"
+                  ? null
+                  : getCategoryTheme(session.category);
+
+              const averageTime = formatAverageTime(
+                session.startedAt,
+                session.endedAt,
+                session.completedCards
+              );
+
+              return (
+                <tr key={session._id}>
+                  <td>{formatDateTime(session.createdAt)}</td>
+
+                  <td>
+                    {session.category === "all" ? "All categories" : theme.label}
+                  </td>
+
+                  <td>
+                    {session.status === "completed" ? "✅ Completed" : "🖐️ Ended early"}
+                  </td>
+
+                  <td>
+                    {session.completedCards}/{session.totalCards}
+                  </td>
+
+                  <td>
+                    {formatDuration(session.startedAt, session.endedAt)}
+                  </td>
+
+                  <td>
+                    {averageTime || "N/A"}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    )}
+  </section>
 </section>
 
       <section className="library-header">
