@@ -1,3 +1,11 @@
 node_modules
 .env
 .DS_Store
+
+node_modules
+.env
+.DS_Store
+
+# Local video files
+images/Demo.mp4
+client/public/images/Demo.mp4
