@@ -1055,3 +1055,38 @@ textarea:not(:placeholder-shown) {
     min-width: 680px;
   }
 }
+
+.hero-image {
+  width: 100%;
+  max-width: 620px;
+  margin-top: 28px;
+  border-radius: 18px;
+  display: block;
+  box-shadow: 0 18px 42px rgba(46, 32, 84, 0.16);
+}
+
+.app.auth-page {
+  min-height: 100vh;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: grid;
+  place-items: center;
+}
+
+.app.auth-page .top-layout {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .hero-image {
+    margin-top: 20px;
+  }
+
+  .app.auth-page {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}

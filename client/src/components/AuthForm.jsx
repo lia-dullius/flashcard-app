@@ -64,6 +64,12 @@ function AuthForm({ onAuthSuccess }) {
             <p className="hero-text">
               Log in to manage your flashcards, study sessions and learning history.
             </p>
+
+            <img
+              className="hero-image"
+              src="/images/pensieve.png"
+              alt="Magical pensieve with floating study cards"
+            />
           </div>
         </header>
 

@@ -616,6 +616,12 @@ const availableStudyCards = getStudyPool();
             <p className="hero-text">
               Build quick study cards and test your memory one spell at a time.
             </p>
+
+            <img
+              className="hero-image"
+              src="/images/pensieve.png"
+              alt="Magical pensieve with floating study cards"
+            />
           </div>
         </header>
 
