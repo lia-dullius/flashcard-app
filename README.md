@@ -4,7 +4,11 @@ Pensieve Cards is a single-page flashcard learning app inspired by the wizarding
 
 The app was extended for Assignment 2 of Internet Programming using React, authentication, role-based access control, multiple database entities and learning history tracking.
 
-[▶️ Watch demo video](images/Demo.mp4)
+## Demo video
+
+[![Watch the Pensieve Cards demo](images/demo-thumbnail.png)](https://youtu.be/ajhH9VcxfIE)
+
+[▶️ Watch demo video on YouTube](https://youtu.be/ajhH9VcxfIE)
 
 ## Problem this project solves
 
@@ -64,10 +68,10 @@ Stores account and role information.
 
 Main fields:
 
-- name
-- email
-- password
-- role, used to define whether the account is a regular user or an admin
+- `name`
+- `email`
+- `password`
+- `role`, used to define whether the account is a regular user or an admin
 
 ### Flashcard
 
@@ -75,10 +79,10 @@ Stores flashcards created by users.
 
 Main fields:
 
-- user, automatically linked to the logged-in account
-- category
-- question
-- answer
+- `user`, automatically linked to the logged-in account
+- `category`
+- `question`
+- `answer`
 
 The `user` field is not manually filled in by the user. It is assigned by the backend so each flashcard belongs to the account that created it.
 
@@ -88,13 +92,13 @@ Stores records of completed or ended study sessions.
 
 Main stored fields:
 
-- user, automatically linked to the logged-in account
-- category
-- totalCards
-- completedCards
-- status
-- startedAt
-- endedAt
+- `user`, automatically linked to the logged-in account
+- `category`
+- `totalCards`
+- `completedCards`
+- `status`
+- `startedAt`
+- `endedAt`
 
 The interface calculates total duration and average seconds per card from `startedAt`, `endedAt` and `completedCards`.
 
@@ -102,7 +106,7 @@ The interface calculates total duration and average seconds per card from `start
 
 Users must register or log in before accessing the flashcard app. Passwords are hashed before being stored in MongoDB, and JWT tokens are used to authenticate API requests.
 
-The application supports two user roles:
+The application supports two user roles.
 
 ### Regular user
 
@@ -146,6 +150,9 @@ When a session is completed or ended after at least one reviewed card, a record 
 ```text
 flashcard-app/
 ├── client/
+│   ├── public/
+│   │   └── images/
+│   │       └── pensieve.png
 │   ├── src/
 │   │   ├── components/
 │   │   │   └── AuthForm.jsx
@@ -162,6 +169,9 @@ flashcard-app/
 │   ├── flashcards.json
 │   ├── studyhistories.json
 │   └── users.json
+│
+├── images/
+│   └── demo-thumbnail.png
 │
 ├── server/
 │   ├── middleware/
@@ -208,11 +218,12 @@ npm install
 
 ### 4. Create a `.env` file
 
-Create a `.env` file in the project root and add your own MongoDB connection string and JWT secret:
+Create a `.env` file in the project root and add your own MongoDB connection string, JWT secret and optional port:
 
 ```env
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
+PORT=3000
 ```
 
 The `.env` file is ignored by Git and should not be uploaded to GitHub.
